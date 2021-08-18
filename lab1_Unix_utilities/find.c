@@ -24,7 +24,8 @@ fmtname(char *path) {
 void
 find(char *path, char *filename) {
     int bufsize = 512;
-    char *buf = malloc(bufsize * sizeof(char)), *p;
+    //char *buf = malloc(bufsize * sizeof(char)), *p;
+    char buf[bufsize], *p;
     int fd;
     struct dirent de;
     struct stat st;
@@ -73,7 +74,7 @@ find(char *path, char *filename) {
          default : break;
     }
     close(fd);
-    free(buf);
+    //free(buf);
 }
 
 int
